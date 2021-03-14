@@ -1,0 +1,18 @@
+extends ../layout 
+
+block content 
+    h2 Crear nueva ficha
+    form(action="/client/create", method="POST")
+        .form-group.mb-3
+            label.form-label Nombre 
+            input.form-control(type="text", name="nombre")
+        .form-group.mb-3
+             label.form-label Apellidos 
+             input.form-control(type="text",name="apellidos")
+        .form-group.mb-3
+             label.form-label Email 
+             input.form-control(type="email",name="email")
+        .form-group.mb-3
+             label.form-label Telefono 
+             input.form-control(type="number",name="telefono")
+        input.btn.btn-block.btn-info(type="submit", value="Enviar")

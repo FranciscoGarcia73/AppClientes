@@ -1,0 +1,21 @@
+extends ../layout.pug 
+
+block content 
+    
+    h2 Listado de clientes 
+    table.table 
+        thead
+            tr         
+                th Nombre Completo
+                th.text-center Email 
+                th.text-center Telefono
+                th.text-center Acciones
+        tbody
+            each ficha in fichas 
+                tr 
+                    td= ficha.nombreCompleto  
+                    td.text-center= ficha.email 
+                    td.text-center= ficha.telefono 
+                    td.text-center 
+                        a.btn.btn-sm.btn-danger(href="/fichas/delete/"+ficha.id, onclick="return confirm('¿Estás seguro?')") Eliminar 
+                        a.btn.btn-sm.btn-info.ml-1(href="/fichas/editar/"+ficha.id) Editar 

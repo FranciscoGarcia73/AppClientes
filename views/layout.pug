@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css", integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+     .container
+      .row 
+        .col-12.mt-5
+          nav.navbar.navbar-expand-lg.navbar-light.bg-warning.bg-gradient.mb-4
+           
+                ul.navbar-nav.col-12
+                    li.nav-item.col-3.text-center
+                        a.nav-link.text-white(href="/main") Inicio
+                    li.nav-item.col-3.text-center 
+                        a.nav-link.text-white(href="/main/about") Sobre mi
+                    li.nav-item.col-3.text-center 
+                        a.nav-link.text-white(href="/client") Clientes
+                    li.nav-item.col-3.text-center 
+                        a.nav-link.text-white(href="/client/new") Nuevo Cliente
+          block content
+    
