@@ -2,5 +2,15 @@ extends ../layout.pug
 
 block content 
     
-    h2 Cabecera y parrafo
+    h2.fs-1.text-purple.p-3  Este es el ejercicio 3 del curso de MERN
+    p.text-secondary La tarea consiste en desarrollar una aplicación con Express que cumpla con las siguientes normas:
+    p.text-success Debe responder a las siguientes URLs:
+    p.text-success /main/index - página web con una cabecera y un párrafo
+    p.text-success /main/about - página web con descripción del autor de la aplicación
+    p.text-success /client/index - página web con una tabla de clientes inventados
+    p.text-success /client/new - página web con un formulario para la creación de clientes
+    p.text-dark (se valorará la organización de los diferentes manejadores de rutas)
+    p.text-dark Todas las páginas deben compartir un menú con enlaces a cada una de las páginas. Para ello podemos utilizar los layouts de pug.
+    p.text-dark Todos los datos necesarios para la realización de la lista de clientes o el formulario, pueden obtenerse a  través de un modelo en una base de datos MongoDB
+    p.text-dark EXTRA - Para cualquier ruta de las anteriormente mencionadas, si se intenta acceder después de las 17.00h o antes de las 8.00h, debe aparecer un mensaje de error indicando que dichos accesos ya no están disponibles (se puede hacer a través de un middleware global)'
     

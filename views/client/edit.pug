@@ -1,7 +1,7 @@
 extends ../layout.pug
 
 block content
-    h2 Editar una ficha - #{ficha.nombre}
+    h2 Editar una ficha - #{ficha.nombreCompleto}
     form(action="/client/update", method="POST", novalidate)
         .form-group.mb-4 
             label.form-label Nombre
