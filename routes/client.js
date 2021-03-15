@@ -19,24 +19,24 @@ router.get('/new', (req, res) => {
 
 });
 
-// //GET /clientes/delete/IDCLIENTE
-// router.get('/delete/:idCliente', (req, res) => {
-//     Cliente.findByIdAndDelete(req.params.idCliente)
-//         .then(clienteBorrado => {
-//             res.redirect('/clientes');
-//         })
-//         .catch(error => console.log(error));
-// });
+//GET /client/delete/IDFICHA
+router.get('/delete/:idFicha', (req, res) => {
+    Ficha.findByIdAndDelete(req.params.idFicha)
+        .then(fichaBorrada => {
+            res.redirect('/client');
+        })
+        .catch(error => console.log(error));
+});
 
-// //GET /clientes/editar/IDCLIENTE
-// router.get('/editar/:idCliente', (req, res) => {
-//     Cliente.findById(req.params.idCliente)
-//         .then(cliente => res.render('clientes/edit', { cliente }))
-//         .catch(error => console.log(error));
-// });
+// //GET /client/edit/IDFICHA
+router.get('/edit/:idFicha', (req, res) => {
+    Ficha.findById(req.params.idFicha)
+        .then(ficha => res.render('client/edit', { ficha }))
+        .catch(error => console.log(error));
+});
 
 
-//POST
+//POST /client/create
 router.post('/create', (req, res) => {
     Ficha.create(req.body)
         .then(nuevaFicha => {
@@ -46,14 +46,12 @@ router.post('/create', (req, res) => {
         .catch(error => console.log(error))
 });
 
-// router.post('/update', (req, res) => {
-//     req.body.cuota = parseFloat(req.body.cuota);
-//     req.body.activo = req.body.activo ? true : false;
-
-//     Cliente.findByIdAndUpdate(req.body.id, req.body, { new: true })
-//         .then(clienteEditado => res.redirect('/clientes'))
-//         .catch(error => console.log(error))
-// });
+// POST /client/update
+router.post('/update', (req, res) => {
+    Ficha.findByIdAndUpdate(req.body.id, req.body, { new: true })
+        .then(fichaEditada => res.redirect('/client'))
+        .catch(error => console.log(error))
+});
 
 
 module.exports = router;
