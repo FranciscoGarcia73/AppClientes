@@ -12,6 +12,14 @@ router.get('/', (req, res) => {
 
 });
 
+//GET - /client/close
+router.get('/close', (req, res) => {
+    res.render('client/close')
+
+
+});
+
+
 //GET - /clientes/nuevo
 router.get('/new', (req, res) => {
     res.render('client/new')
