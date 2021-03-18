@@ -15,16 +15,12 @@ router.get('/', (req, res) => {
 //GET - /client/close
 router.get('/close', (req, res) => {
     res.render('client/close')
-
-
 });
 
 
-//GET - /clientes/nuevo
+//GET - /client/new
 router.get('/new', (req, res) => {
     res.render('client/new')
-
-
 });
 
 //GET /client/delete/IDFICHA
@@ -47,10 +43,7 @@ router.get('/edit/:idFicha', (req, res) => {
 //POST /client/create
 router.post('/create', (req, res) => {
     Ficha.create(req.body)
-        .then(nuevaFicha => {
-            console.log(nuevaFicha);
-            res.redirect('/client');
-        })
+        .then(nuevaFicha => res.redirect('/client'))
         .catch(error => console.log(error))
 });
 

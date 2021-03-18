@@ -30,4 +30,5 @@ block content
                 placeholder="Introduce el telefono",
                 name="telefono", 
                 value=ficha.telefono)
-        input.btn.btn-block.btn-info.w-auto(type="submit", value="Enviar") 
+        input(type="hidden", name="id", value=ficha._id)        
+        input.btn.btn-block.btn-info.w-auto(type="submit", value="Modificar") 

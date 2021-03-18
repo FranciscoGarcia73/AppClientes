@@ -33,7 +33,7 @@ app.use((req, res, next) => {
   //Agregar control acceso segun horario
   const currentHour = dayjs().format('HH');
   req.horaActual = parseInt(currentHour);
-  if (req.horaActual < 08 || req.horaActual > 16) {
+  if (req.horaActual < 08 || req.horaActual > 21) {
     res.render('client/close');
     } else {
     next();
