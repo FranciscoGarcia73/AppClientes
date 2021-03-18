@@ -4,48 +4,37 @@ block content
     h2 Editar una ficha - #{ficha.nombreCompleto}
     form(action="/client/update", method="POST", novalidate)
         .form-group.mb-4 
-            label.form-label Nombre
-            input.form-control(
+            label.px-3.form-label Nombre
+            input.mx-3.form-control(
                 type="text", 
                 placeholder="Introduce el nombre",
                 name="nombre",
                 value=ficha.nombre)
         .form-group.mb-4
-            label.form-label Apellidos
-            input.form-control(
+            label.px-3.form-label Apellidos
+            input.mx-3.form-control(
                 type="text", 
                 placeholder="Introduce los apellidos",
                 name="apellidos",
                 value=ficha.apellidos)
         .form-group.mb-4 
-            label.form-label Email
-            input.form-control(
+            label.px-3.form-label Email
+            input.form-control.w-25.d-inline(
                 type="email", 
                 placeholder="Introduce el email",
                 name="email",
                 value=ficha.email)
-        .form-group.mb-4 
-            label.form-label Cuota
-             input.form-control(
+            label.px-3.form-label Telefono
+            input.form-control.w-25.d-inline(
                 type="number", 
                 placeholder="Introduce el telefono",
-                name="telefono",
+                name="telefono", 
                 value=ficha.telefono)
-        input.btn.btn-block.btn-info(type="submit", value="Enviar")
-    //- script.
-               
-    //-     // Recorro las opciones de cuota y selecciono la correcta
-    //-     const options = document.querySelectorAll('.form-select option');
-    //-     for(let option of options){
-    //-         if(option.value === cuota){
-    //-             option.selected = true;
-    //-         }
-    //-     }
-
-    //-     // Marcar o no el checkbox activo
-    //-     const checkBox = document.querySelector('.form-check-input');
-    //-     if(activo === 'true'){
-    //-         checkBox.checked = true;
-    //-     }else{
-    //-         checkBox.checked = false;
-    //-     }
+        //- .form-group.mb-4 
+        //-     label.form-label Telefono
+        //-      input.form-control(
+        //-         type="number", 
+        //-         placeholder="Introduce el telefono",
+        //-         name="telefono", 
+        //-         value=ficha.telefono)
+        input.btn.btn-block.btn-info(type="submit", value="Enviar") 

@@ -28,24 +28,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*MIDDLEWARES*/
 app.use(express.static('public/images'));
-app.use((req, res, next) => {
 
+app.use((req, res, next) => {
   //Agregar control acceso segun horario
-  const currentHour = dayjs().format('HH:mm:ss');
-  req.horaActual = currentHour;
-  if (req.horaActual <= '08:00:00' || req.horaActual >= '21:00:00') {
+  const currentHour = dayjs().format('HH');
+  req.horaActual = parseInt(currentHour);
+  if (req.horaActual < 08 || req.horaActual > 16) {
     res.render('client/close');
     } else {
     next();
   }
-
-  // fs.appendFile('./request.log', `[${currentDate}]\n\tURL: ${req.url}\n\tMETHOD: ${req.method}\n`, (err) => {
-  //   if (err) {
-  //     res.send('Ha ocurrido un error en el LOG');
-  //   } else {
-  //     next();
-  //   }
-  // })
 });
 
 
