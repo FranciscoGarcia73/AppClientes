@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const Ficha = require('../models/Ficha');
 
-// GET/client
-router.get('/', (req, res) => {
+// GET/client/index
+router.get('/index', (req, res) => {
     Ficha.find()
         .then(fichas => {
             res.render('client/index', { fichas });
@@ -27,7 +27,7 @@ router.get('/new', (req, res) => {
 router.get('/delete/:idFicha', (req, res) => {
     Ficha.findByIdAndDelete(req.params.idFicha)
         .then(fichaBorrada => {
-            res.redirect('/client');
+            res.redirect('/client/index');
         })
         .catch(error => console.log(error));
 });
@@ -43,14 +43,14 @@ router.get('/edit/:idFicha', (req, res) => {
 //POST /client/create
 router.post('/create', (req, res) => {
     Ficha.create(req.body)
-        .then(nuevaFicha => res.redirect('/client'))
+        .then(nuevaFicha => res.redirect('/client/index'))
         .catch(error => console.log(error))
 });
 
 // POST /client/update
 router.post('/update', (req, res) => {
     Ficha.findByIdAndUpdate(req.body.id, req.body, { new: true })
-        .then(fichaEditada => res.redirect('/client'))
+        .then(fichaEditada => res.redirect('/client/index'))
         .catch(error => console.log(error))
 });
 
