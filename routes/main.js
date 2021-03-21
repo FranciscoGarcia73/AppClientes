@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const Ficha = require('../models/Ficha');
 
-// GET/main
-router.get('/', (req, res) => {
+// GET/main/index
+router.get('/index', (req, res) => {
     res.render('main/index')
 
 });

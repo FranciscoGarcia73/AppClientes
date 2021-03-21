@@ -8,8 +8,6 @@ router.get('/index', (req, res) => {
             res.render('client/index', { fichas });
         })
         .catch(error => console.log(error));
-
-
 });
 
 //GET - /client/close
