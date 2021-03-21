@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   const currentMinutes = dayjs().format('mm');
   req.minutosActual = parseInt(currentMinutes);
 
-  if (req.horaActual < 08 || req.horaActual > 12 || (req.horaActual === 12 && req.minutosActual !== 00)) {
+  if (req.horaActual < 08 || req.horaActual > 17 || (req.horaActual === 17 && req.minutosActual !== 00)) {
     res.render('client/close');
     } else {
     next();
