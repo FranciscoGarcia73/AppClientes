@@ -7,14 +7,16 @@ block content
         thead
             tr         
                 th Nombre Completo
-                th.text-center Email 
+                th Domicilio 
+                th Email 
                 th.text-center Telefono
                 th.text-center Acciones
         tbody
             each ficha in fichas 
                 tr 
                     td= ficha.nombreCompleto  
-                    td.text-center= ficha.email 
+                    td= ficha.domicilioCompleto
+                    td= ficha.email 
                     td.text-center= ficha.telefono 
                     td.text-center 
                         a.btn.btn-sm.btn-danger(href="/client/delete/"+ficha.id, onclick="return confirm('¿Estás seguro?')") Eliminar 
